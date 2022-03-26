@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Col, Container, Dropdown, DropdownButton, Row } from "react-bootstrap";
+import { NewsGrid } from "../../components";
+import { useFetch } from "../../hooks/useFetch";
+import { NewsArticle } from "../../types/response";
 import styles from "./News.module.css";
 
 interface NewsSite {
@@ -19,6 +22,10 @@ const News = () => {
     { url: "elonx.net", name: "Elonx" },
     { url: "esa.int", name: "Esa" },
   ];
+
+  const URI = `https://api.spaceflightnewsapi.net/v3/articles?_limit=30&url_contains=${newsSite.url}`;
+  const { response, error, loading } = useFetch<NewsArticle[]>(URI);
+
   return (
     <Container className="my-6">
       <Row>
@@ -38,6 +45,7 @@ const News = () => {
           </DropdownButton>
         </Col>
       </Row>
+      <Row>{response && <NewsGrid news={response} />}</Row>
     </Container>
   );
 };
