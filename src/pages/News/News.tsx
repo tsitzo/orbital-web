@@ -45,7 +45,7 @@ const News = () => {
           </DropdownButton>
         </Col>
       </Row>
-      <Row>{response && <NewsGrid news={response} />}</Row>
+      {response && <NewsGrid news={response} />}
     </Container>
   );
 };

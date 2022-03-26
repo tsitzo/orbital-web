@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import Masonry from "react-masonry-css";
 import { NewsArticle } from "../../types/response";
+import NewsCard from "../NewsCard";
 
 interface INewsGridProps {
   news: NewsArticle[];
@@ -21,7 +22,7 @@ const NewsGrid: FC<INewsGridProps> = ({ news }) => {
       columnClassName="my-masonry-grid_column"
     >
       {news.map((el, i) => (
-        <p>{el.title}</p>
+        <NewsCard newsArticle={el} />
       ))}
     </Masonry>
   );

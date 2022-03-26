@@ -1,0 +1,19 @@
+.card {
+  cursor: pointer;
+}
+
+.image {
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.flexEnd {
+  display: flex !important;
+  justify-content: flex-end !important;
+}
