@@ -1,0 +1,9 @@
+.flexEnd {
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
+.header {
+  font-size: 2em;
+  font-weight: 600;
+}
